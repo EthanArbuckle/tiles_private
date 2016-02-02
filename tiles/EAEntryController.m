@@ -87,13 +87,17 @@
             break;
     }
     
-    EATileViewController *gameController = [[EATileViewController alloc] init];
+    EATileViewController *gameController = [[EATileViewController alloc] initWithScore:0];
     [gameController setNumberOfX:xTileCount];
     [gameController setNumberOfY:yTileCount];
     [gameController setNumberOfGameTiles:activeTileCount];
     [gameController layoutTilesOnContainer];
     
-    [self presentViewController:gameController animated:YES completion:nil];
+    UINavigationController *currentGameNavController = [[UINavigationController alloc] initWithRootViewController:gameController];
+    [[currentGameNavController navigationBar] setHidden:YES];
+    [[currentGameNavController interactivePopGestureRecognizer] setEnabled:NO];
+    
+    [self presentViewController:currentGameNavController animated:YES completion:nil];
     
 }
 

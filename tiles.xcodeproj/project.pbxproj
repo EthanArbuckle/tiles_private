@@ -14,6 +14,7 @@
 		5F07364F1C5FE18A007CE5ED /* EATileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F07364E1C5FE18A007CE5ED /* EATileViewController.m */; };
 		5F0736521C5FE2EF007CE5ED /* EATile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0736511C5FE2EF007CE5ED /* EATile.m */; };
 		5F0736551C5FFDAD007CE5ED /* EAEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0736541C5FFDAD007CE5ED /* EAEntryController.m */; };
+		5F3E1C611C611237008E8AFC /* EAGameOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E1C601C611237008E8AFC /* EAGameOverview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		5F0736511C5FE2EF007CE5ED /* EATile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EATile.m; sourceTree = "<group>"; };
 		5F0736531C5FFDAD007CE5ED /* EAEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAEntryController.h; sourceTree = "<group>"; };
 		5F0736541C5FFDAD007CE5ED /* EAEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAEntryController.m; sourceTree = "<group>"; };
+		5F3E1C5F1C611237008E8AFC /* EAGameOverview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGameOverview.h; sourceTree = "<group>"; };
+		5F3E1C601C611237008E8AFC /* EAGameOverview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGameOverview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				5F07364E1C5FE18A007CE5ED /* EATileViewController.m */,
 				5F0736501C5FE2EF007CE5ED /* EATile.h */,
 				5F0736511C5FE2EF007CE5ED /* EATile.m */,
+				5F3E1C5F1C611237008E8AFC /* EAGameOverview.h */,
+				5F3E1C601C611237008E8AFC /* EAGameOverview.m */,
 				5F0736421C5FE163007CE5ED /* Assets.xcassets */,
 				5F0736441C5FE163007CE5ED /* LaunchScreen.storyboard */,
 				5F0736471C5FE163007CE5ED /* Info.plist */,
@@ -117,6 +122,7 @@
 				TargetAttributes = {
 					5F0736321C5FE163007CE5ED = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = BDRBB4CT97;
 					};
 				};
 			};
@@ -159,6 +165,7 @@
 				5F0736381C5FE163007CE5ED /* main.m in Sources */,
 				5F07364F1C5FE18A007CE5ED /* EATileViewController.m in Sources */,
 				5F0736521C5FE2EF007CE5ED /* EATile.m in Sources */,
+				5F3E1C611C611237008E8AFC /* EAGameOverview.m in Sources */,
 				5F0736551C5FFDAD007CE5ED /* EAEntryController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +268,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ethanarbuckle.tiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -272,10 +282,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ethanarbuckle.tiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -298,6 +311,7 @@
 				5F07364C1C5FE163007CE5ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

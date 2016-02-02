@@ -26,5 +26,6 @@
 
 - (void)setActiveCardWithNumber:(NSInteger)cardNumber;
 - (void)triggerLost;
+- (void)setIsInHiddenState:(BOOL)hiddenState;
 
 @end

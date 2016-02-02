@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "EATile.h"
+#import "EAGameOverview.h"
 
 @interface EATileViewController : UIViewController <EATileDelegate>
 
 @property (nonatomic, retain) UIView *tileContainer;
+@property (nonatomic, retain) EAGameOverview *gameScoreView;
 @property (nonatomic, retain) NSMutableArray <EATile *> *gameTiles;
 @property (nonatomic) NSInteger expectedNumber;
 @property (nonatomic) BOOL currentlyActive;
@@ -20,6 +22,7 @@
 @property (nonatomic) CGFloat numberOfY;
 @property (nonatomic) CGFloat numberOfGameTiles;
 
+- (id)initWithScore:(NSInteger)startingScore;
 - (void)layoutTilesOnContainer;
 
 @end

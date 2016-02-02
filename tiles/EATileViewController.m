@@ -10,17 +10,21 @@
 
 @implementation EATileViewController
 
-- (id)init {
-    
+- (id)initWithScore:(NSInteger)startingScore {
+
     if ((self = [super init])) {
         
-        [[self view] setBackgroundColor:[UIColor blackColor]];
+        [[self view] setBackgroundColor:[UIColor colorWithRed:0.910 green:0.929 blue:0.937 alpha:1.00]];
         
         _currentlyActive = NO;
         
         _tileContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 100, [[self view] frame].size.width, [[self view] frame].size.height - 200)];
         [_tileContainer setBackgroundColor:[UIColor whiteColor]];
         [[self view] addSubview:_tileContainer];
+        
+        _gameScoreView = [[EAGameOverview alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 100)];
+        [_gameScoreView setGameScore:startingScore];
+        [[self view] addSubview:_gameScoreView];
 }
     
     return self;
@@ -35,9 +39,9 @@
     
     _gameTiles = [[NSMutableArray alloc] initWithCapacity:_numberOfY * _numberOfX];
 
-    CGFloat borderWidth = 5;
+    CGFloat borderWidth = 0.4;
     
-    CGFloat yOrigin = borderWidth / 2;
+    CGFloat yOrigin = 0;
     
     for (int yIndex = 0; yIndex < _numberOfY; yIndex++) {
         
@@ -77,7 +81,7 @@
 }
 
 - (void)didTapGameTile:(EATile *)tile {
-    
+
     if (_currentlyActive) {
         
         if (![tile isGameTile] || [tile tileNumber] != _expectedNumber) {
@@ -92,14 +96,32 @@
             return;
         }
         
-        [tile setBackgroundColor:[UIColor whiteColor]];
+        [tile setIsInHiddenState:NO];
         
         if (++_expectedNumber > _numberOfGameTiles) {
 
             _currentlyActive = NO;
             
+
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+                
+                EATileViewController *gameController = [[EATileViewController alloc] initWithScore:[_gameScoreView gameScore] + 1];
+                [gameController setNumberOfX:_numberOfX];
+                [gameController setNumberOfY:_numberOfY];
+                
+                if ((([_gameScoreView gameScore] + 1 ) % 4) == 0 && (_numberOfGameTiles + 1) <= (_numberOfY * _numberOfX)) {
+                    
+                    [gameController setNumberOfGameTiles:_numberOfGameTiles + 1];
+                }
+                else {
+                    
+                    [gameController setNumberOfGameTiles:_numberOfGameTiles];
+                }
+                
+                [gameController layoutTilesOnContainer];
+                
+                [[self navigationController] pushViewController:gameController animated:YES];
+                
             });
             
             return;
