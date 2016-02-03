@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tiles.h"
 
 @class EATile;
 @protocol EATileDelegate <NSObject>

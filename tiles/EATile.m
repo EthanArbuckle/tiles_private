@@ -16,9 +16,9 @@
         
         _triggered = YES;
         
-        [self setBackgroundColor:[UIColor colorWithRed:0.97 green:0.98 blue:1.00 alpha:1.0]];
+        [self setBackgroundColor:tileNormalBackgroundColor];
         
-        [[self layer] setBorderColor:[UIColor colorWithRed:0.89 green:0.90 blue:0.92 alpha:1.0].CGColor];
+        [[self layer] setBorderColor:[tileBorderColor CGColor]];
         [[self layer] setBorderWidth:1];
         
         [self setClipsToBounds:NO];
@@ -29,6 +29,11 @@
         [_numberLabel setTextColor:[UIColor whiteColor]];
         [self addSubview:_numberLabel];
         
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(tilesCountdownTimerLength * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+           
+            [self setIsInHiddenState:YES];
+            [_delegate gameStarted];
+        });
     }
     
     return self;
@@ -54,16 +59,12 @@
 
 - (void)setActiveCardWithNumber:(NSInteger)cardNumber {
 
-    [self setBackgroundColor:[UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00]];
+    [self setBackgroundColor:tileSelectedBackgroundColor];
     [_numberLabel setText:[NSString stringWithFormat:@"%ld", (long)cardNumber]];
     
     [self setIsGameTile:YES];
     [self setTileNumber:cardNumber];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self setIsInHiddenState:YES];
-        [_delegate gameStarted];
-    });
 }
 
 - (void)triggerLost {
@@ -77,7 +78,7 @@
     
     _triggered = !hiddenState;
     //[_numberLabel setHidden:hiddenState];
-    [self setBackgroundColor:(hiddenState) ? [UIColor colorWithRed:0.961 green:0.969 blue:0.996 alpha:1.00] : [UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00]];
+    [self setBackgroundColor:(hiddenState) ? tileNormalBackgroundColor : tileSelectedBackgroundColor];
 }
 
 @end

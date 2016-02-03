@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tiles.h"
 
 @interface EAGameOverview : UIView
 

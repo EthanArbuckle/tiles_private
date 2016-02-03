@@ -110,7 +110,7 @@
                 [gameController setNumberOfX:_numberOfX];
                 [gameController setNumberOfY:_numberOfY];
                 
-                if ((([_gameScoreView gameScore] + 1 ) % 5) == 0 && (_numberOfGameTiles + 1) <= (_numberOfY * _numberOfX)) {
+                if ((([_gameScoreView gameScore] + 1 ) % tilesAddCardInterval) == 0 && (_numberOfGameTiles + 1) <= (_numberOfY * _numberOfX)) {
                     
                     [gameController setNumberOfGameTiles:_numberOfGameTiles + 1];
                 }

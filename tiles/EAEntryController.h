@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EATileViewController.h"
+#import "Tiles.h"
 
 @interface EAEntryController : UIViewController
 

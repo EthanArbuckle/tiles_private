@@ -15,6 +15,12 @@
 		5F0736521C5FE2EF007CE5ED /* EATile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0736511C5FE2EF007CE5ED /* EATile.m */; };
 		5F0736551C5FFDAD007CE5ED /* EAEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0736541C5FFDAD007CE5ED /* EAEntryController.m */; };
 		5F3E1C611C611237008E8AFC /* EAGameOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3E1C601C611237008E8AFC /* EAGameOverview.m */; };
+		5F3E1C6D1C61B90D008E8AFC /* Options.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E1C671C61B90D008E8AFC /* Options.png */; };
+		5F3E1C6E1C61B90D008E8AFC /* Options@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E1C681C61B90D008E8AFC /* Options@2x.png */; };
+		5F3E1C6F1C61B90D008E8AFC /* Options@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E1C691C61B90D008E8AFC /* Options@3x.png */; };
+		5F3E1C701C61B90D008E8AFC /* Quit.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E1C6A1C61B90D008E8AFC /* Quit.png */; };
+		5F3E1C711C61B90D008E8AFC /* Quit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E1C6B1C61B90D008E8AFC /* Quit@2x.png */; };
+		5F3E1C721C61B90D008E8AFC /* Quit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E1C6C1C61B90D008E8AFC /* Quit@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,13 @@
 		5F0736541C5FFDAD007CE5ED /* EAEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAEntryController.m; sourceTree = "<group>"; };
 		5F3E1C5F1C611237008E8AFC /* EAGameOverview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGameOverview.h; sourceTree = "<group>"; };
 		5F3E1C601C611237008E8AFC /* EAGameOverview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGameOverview.m; sourceTree = "<group>"; };
+		5F3E1C631C61B44C008E8AFC /* Tiles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tiles.h; sourceTree = "<group>"; };
+		5F3E1C671C61B90D008E8AFC /* Options.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Options.png; sourceTree = "<group>"; };
+		5F3E1C681C61B90D008E8AFC /* Options@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options@2x.png"; sourceTree = "<group>"; };
+		5F3E1C691C61B90D008E8AFC /* Options@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options@3x.png"; sourceTree = "<group>"; };
+		5F3E1C6A1C61B90D008E8AFC /* Quit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quit.png; sourceTree = "<group>"; };
+		5F3E1C6B1C61B90D008E8AFC /* Quit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quit@2x.png"; sourceTree = "<group>"; };
+		5F3E1C6C1C61B90D008E8AFC /* Quit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quit@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,16 +78,12 @@
 		5F0736351C5FE163007CE5ED /* tiles */ = {
 			isa = PBXGroup;
 			children = (
+				5F3E1C631C61B44C008E8AFC /* Tiles.h */,
 				5F0736391C5FE163007CE5ED /* AppDelegate.h */,
 				5F07363A1C5FE163007CE5ED /* AppDelegate.m */,
-				5F0736531C5FFDAD007CE5ED /* EAEntryController.h */,
-				5F0736541C5FFDAD007CE5ED /* EAEntryController.m */,
-				5F07364D1C5FE18A007CE5ED /* EATileViewController.h */,
-				5F07364E1C5FE18A007CE5ED /* EATileViewController.m */,
-				5F0736501C5FE2EF007CE5ED /* EATile.h */,
-				5F0736511C5FE2EF007CE5ED /* EATile.m */,
-				5F3E1C5F1C611237008E8AFC /* EAGameOverview.h */,
-				5F3E1C601C611237008E8AFC /* EAGameOverview.m */,
+				5F3E1C661C61B90D008E8AFC /* Assets */,
+				5F3E1C641C61B8E6008E8AFC /* Controllers */,
+				5F3E1C651C61B8F4008E8AFC /* Views */,
 				5F0736421C5FE163007CE5ED /* Assets.xcassets */,
 				5F0736441C5FE163007CE5ED /* LaunchScreen.storyboard */,
 				5F0736471C5FE163007CE5ED /* Info.plist */,
@@ -90,6 +99,41 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		5F3E1C641C61B8E6008E8AFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F0736531C5FFDAD007CE5ED /* EAEntryController.h */,
+				5F0736541C5FFDAD007CE5ED /* EAEntryController.m */,
+				5F07364D1C5FE18A007CE5ED /* EATileViewController.h */,
+				5F07364E1C5FE18A007CE5ED /* EATileViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5F3E1C651C61B8F4008E8AFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F0736501C5FE2EF007CE5ED /* EATile.h */,
+				5F0736511C5FE2EF007CE5ED /* EATile.m */,
+				5F3E1C5F1C611237008E8AFC /* EAGameOverview.h */,
+				5F3E1C601C611237008E8AFC /* EAGameOverview.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5F3E1C661C61B90D008E8AFC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5F3E1C671C61B90D008E8AFC /* Options.png */,
+				5F3E1C681C61B90D008E8AFC /* Options@2x.png */,
+				5F3E1C691C61B90D008E8AFC /* Options@3x.png */,
+				5F3E1C6A1C61B90D008E8AFC /* Quit.png */,
+				5F3E1C6B1C61B90D008E8AFC /* Quit@2x.png */,
+				5F3E1C6C1C61B90D008E8AFC /* Quit@3x.png */,
+			);
+			path = Assets;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -149,8 +193,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3E1C701C61B90D008E8AFC /* Quit.png in Resources */,
+				5F3E1C711C61B90D008E8AFC /* Quit@2x.png in Resources */,
 				5F0736461C5FE163007CE5ED /* LaunchScreen.storyboard in Resources */,
 				5F0736431C5FE163007CE5ED /* Assets.xcassets in Resources */,
+				5F3E1C721C61B90D008E8AFC /* Quit@3x.png in Resources */,
+				5F3E1C6D1C61B90D008E8AFC /* Options.png in Resources */,
+				5F3E1C6F1C61B90D008E8AFC /* Options@3x.png in Resources */,
+				5F3E1C6E1C61B90D008E8AFC /* Options@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

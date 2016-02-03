@@ -14,20 +14,32 @@
     
     if ((self = [super initWithFrame:frame])) {
         
-        [self setBackgroundColor:[UIColor colorWithRed:0.93 green:0.95 blue:0.95 alpha:1.0]];
+        [self setBackgroundColor:tilesHeaderBackgroundColor];
         
         _gameScore = 0;
-        _timerInterval = 3;
+        _timerInterval = tilesCountdownTimerLength;
         
         _scoreContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75, 50)];
-        [_scoreContainer setBackgroundColor:[UIColor colorWithRed:0.38 green:0.42 blue:0.43 alpha:1.0]];
+        [_scoreContainer setBackgroundColor:scoreContainerBackgroundColor];
         [_scoreContainer setCenter:[self center]];
+        [_scoreContainer setFrame:CGRectMake([_scoreContainer frame].origin.x, 35, 75, 50)];
         [_scoreContainer setAlpha:0];
+        [[_scoreContainer layer] setShadowRadius:7];
+        [[_scoreContainer layer] setShadowOffset:CGSizeMake(0, 4)];
+        [[_scoreContainer layer] setShadowOpacity:0.9];
+        [[_scoreContainer layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[_scoreContainer bounds]] CGPath]];
+        [[_scoreContainer layer] setShadowColor:[scoreContainerBackgroundColor CGColor]];
         [self addSubview:_scoreContainer];
         
         _timerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75, 50)];
-        [_timerContainer setBackgroundColor:[UIColor colorWithRed:0.38 green:0.42 blue:0.43 alpha:1.0]];
+        [_timerContainer setBackgroundColor:scoreContainerBackgroundColor];
         [_timerContainer setCenter:[self center]];
+        [_timerContainer setFrame:CGRectMake([_timerContainer frame].origin.x, 35, 75, 50)];
+        [[_timerContainer layer] setShadowRadius:7];
+        [[_timerContainer layer] setShadowOffset:CGSizeMake(0, 4)];
+        [[_timerContainer layer] setShadowOpacity:0.9];
+        [[_timerContainer layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[_timerContainer bounds]] CGPath]];
+        [[_timerContainer layer] setShadowColor:[scoreContainerBackgroundColor CGColor]];
         [self addSubview:_timerContainer];
         
         _timerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, [_timerContainer frame].size.width, 20)];
