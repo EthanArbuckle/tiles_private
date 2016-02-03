@@ -39,11 +39,11 @@
         [[self view] addSubview:playButton];
         
         EAMenuButton *statsButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Stats.png"] andTitle:@"Stats"];
-        [statsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [playButton frame].origin.y + [playButton frame].size.height + 10, 160, 55)];
+        [statsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [playButton frame].origin.y + [playButton frame].size.height + 20, 160, 55)];
         [[self view] addSubview:statsButton];
         
         EAMenuButton *optionsButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Options (Cell).png"] andTitle:@"  Options"];
-        [optionsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [statsButton frame].origin.y + [statsButton frame].size.height + 10, 160, 55)];
+        [optionsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [statsButton frame].origin.y + [statsButton frame].size.height + 20, 160, 55)];
         CGRect imageFrame = [[optionsButton cellImage] frame];
         imageFrame.origin.x -= 10;
         [[optionsButton cellImage] setFrame:imageFrame];
