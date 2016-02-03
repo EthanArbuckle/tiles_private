@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EATileViewController.h"
 #import "Tiles.h"
+#import "EAMenuButton.h"
 
 @interface EAEntryController : UIViewController
 
