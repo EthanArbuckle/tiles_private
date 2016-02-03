@@ -16,9 +16,9 @@
         
         _triggered = YES;
         
-        [self setBackgroundColor:[UIColor colorWithRed:0.961 green:0.969 blue:0.996 alpha:1.00]];
+        [self setBackgroundColor:[UIColor colorWithRed:0.97 green:0.98 blue:1.00 alpha:1.0]];
         
-        [[self layer] setBorderColor:[UIColor lightGrayColor].CGColor];
+        [[self layer] setBorderColor:[UIColor colorWithRed:0.89 green:0.90 blue:0.92 alpha:1.0].CGColor];
         [[self layer] setBorderWidth:1];
         
         [self setClipsToBounds:NO];
@@ -41,10 +41,10 @@
         _triggered = YES;
         
         [[self layer] setZPosition:5];
-        [[self layer] setShadowRadius:10];
+        [[self layer] setShadowRadius:7];
         [[self layer] setShadowOffset:CGSizeMake(0, 4)];
-        [[self layer] setShadowOpacity:1];
-        [[self layer] setShadowColor:[UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00].CGColor];
+        [[self layer] setShadowOpacity:0.9];
+        [[self layer] setShadowColor:[UIColor colorWithRed:0.75 green:0.82 blue:0.85 alpha:1.0].CGColor];
         
         [_delegate didTapGameTile:self];
     }
