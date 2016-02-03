@@ -18,7 +18,7 @@
         
         _currentlyActive = NO;
         
-        _tileContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 100, [[self view] frame].size.width, [[self view] frame].size.height - 100)];
+        _tileContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 116, [[self view] frame].size.width, [[self view] frame].size.height - 100)];
         [_tileContainer setBackgroundColor:[UIColor whiteColor]];
         [[self view] addSubview:_tileContainer];
         
@@ -58,7 +58,7 @@
             xOrigin += ([[self view] frame].size.width / _numberOfX);
         }
 
-        yOrigin += ([[self view] frame].size.height - 100) / _numberOfY;
+        yOrigin += ([[self view] frame].size.height - 116) / _numberOfY;
     }
     
     for (int gameCardsChosen = 1; gameCardsChosen <= _numberOfGameTiles; gameCardsChosen++) {
