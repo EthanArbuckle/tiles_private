@@ -24,9 +24,9 @@
         [_scoreContainer setCenter:[self center]];
         [_scoreContainer setFrame:CGRectMake([_scoreContainer frame].origin.x, 35, 75, 50)];
         [_scoreContainer setAlpha:0];
-        [[_scoreContainer layer] setShadowRadius:7];
-        [[_scoreContainer layer] setShadowOffset:CGSizeMake(0, 4)];
-        [[_scoreContainer layer] setShadowOpacity:0.9];
+        [[_scoreContainer layer] setShadowRadius:6];
+        [[_scoreContainer layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[_scoreContainer layer] setShadowOpacity:0.5];
         [[_scoreContainer layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[_scoreContainer bounds]] CGPath]];
         [[_scoreContainer layer] setShadowColor:[scoreContainerBackgroundColor CGColor]];
         [self addSubview:_scoreContainer];
@@ -35,9 +35,9 @@
         [_timerContainer setBackgroundColor:scoreContainerBackgroundColor];
         [_timerContainer setCenter:[self center]];
         [_timerContainer setFrame:CGRectMake([_timerContainer frame].origin.x, 35, 75, 50)];
-        [[_timerContainer layer] setShadowRadius:7];
-        [[_timerContainer layer] setShadowOffset:CGSizeMake(0, 4)];
-        [[_timerContainer layer] setShadowOpacity:0.9];
+        [[_timerContainer layer] setShadowRadius:6];
+        [[_timerContainer layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[_timerContainer layer] setShadowOpacity:0.5];
         [[_timerContainer layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[_timerContainer bounds]] CGPath]];
         [[_timerContainer layer] setShadowColor:[scoreContainerBackgroundColor CGColor]];
         [self addSubview:_timerContainer];
