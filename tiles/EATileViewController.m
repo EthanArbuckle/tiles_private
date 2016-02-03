@@ -39,18 +39,16 @@
     }
     
     _gameTiles = [[NSMutableArray alloc] initWithCapacity:_numberOfY * _numberOfX];
-
-    CGFloat borderWidth = 0.4;
     
     CGFloat yOrigin = 0;
     
     for (int yIndex = 0; yIndex < _numberOfY; yIndex++) {
         
-        CGFloat xOrigin = borderWidth / 2;
+        CGFloat xOrigin = 0;
         
         for (int xIndex = 0; xIndex < _numberOfX; xIndex++) {
             
-            EATile *currentTile = [[EATile alloc] initWithFrame:CGRectMake(xOrigin, yOrigin, ([[self view] frame].size.width / _numberOfX) - borderWidth, (([[self view] frame].size.height - 100) / _numberOfY) - borderWidth)];
+            EATile *currentTile = [[EATile alloc] initWithFrame:CGRectMake(xOrigin, yOrigin, ([[self view] frame].size.width / _numberOfX), (([[self view] frame].size.height - 100) / _numberOfY) - 2)];
             [currentTile setDelegate:self];
             [_tileContainer addSubview:currentTile];
             

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tiles/EATileViewController.m"
-            timestampString = "476127280.602215"
+            timestampString = "476169406.944247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-layoutTilesOnContainer"
             landmarkType = "5">
          </BreakpointContent>
