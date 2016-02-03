@@ -20,6 +20,7 @@
         
         _tileContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 116, [[self view] frame].size.width, [[self view] frame].size.height - 100)];
         [_tileContainer setBackgroundColor:[UIColor whiteColor]];
+        
         [[self view] addSubview:_tileContainer];
         
         _gameScoreView = [[EAGameOverview alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 100)];

@@ -19,14 +19,14 @@
         _gameScore = 0;
         _timerInterval = 3;
         
-        _scoreContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 50)];
-        [_scoreContainer setBackgroundColor:[UIColor colorWithRed:0.310 green:0.345 blue:0.357 alpha:1.00]];
+        _scoreContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75, 50)];
+        [_scoreContainer setBackgroundColor:[UIColor colorWithRed:0.38 green:0.42 blue:0.43 alpha:1.0]];
         [_scoreContainer setCenter:[self center]];
         [_scoreContainer setAlpha:0];
         [self addSubview:_scoreContainer];
         
-        _timerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 50)];
-        [_timerContainer setBackgroundColor:[UIColor colorWithRed:0.310 green:0.345 blue:0.357 alpha:1.00]];
+        _timerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75, 50)];
+        [_timerContainer setBackgroundColor:[UIColor colorWithRed:0.38 green:0.42 blue:0.43 alpha:1.0]];
         [_timerContainer setCenter:[self center]];
         [self addSubview:_timerContainer];
         
@@ -37,7 +37,7 @@
         [_timerLabel setText:[NSString stringWithFormat:@"%ld", (long)_timerInterval]];
         [_timerContainer addSubview:_timerLabel];
         
-        UILabel *scoreText = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, [_scoreContainer frame].size.width, 10)];
+        UILabel *scoreText = [[UILabel alloc] initWithFrame:CGRectMake(0, 8, [_scoreContainer frame].size.width, 10)];
         [scoreText setTextColor:[UIColor whiteColor]];
         [scoreText setFont:[UIFont fontWithName:@".SFUIText-Bold" size:12]];
         [scoreText setTextAlignment:NSTextAlignmentCenter];
