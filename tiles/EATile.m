@@ -12,7 +12,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
     
-    if ((self = [super initWithFrame:CGRectInset(frame, -1, -1)])) {
+    if ((self = [super initWithFrame:frame])) {
         
         _triggered = YES;
         
