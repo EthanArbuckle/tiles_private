@@ -10,9 +10,11 @@
 #import "EATileViewController.h"
 #import "Tiles.h"
 #import "EAMenuButton.h"
+#import "EAStatsController.h"
 
 @interface EAEntryController : UIViewController
 
 - (void)startGame:(UIButton *)sender;
+- (void)pushToStats;
 
 @end

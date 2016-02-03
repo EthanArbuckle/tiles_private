@@ -28,4 +28,6 @@
 #define tilesEntryButtonsBackgroundColor [UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00]
 #define tilesHeaderLabelTextColor [UIColor colorWithRed:0.616 green:0.675 blue:0.698 alpha:1.00]
 
+#define tilesStatsRedLabelColor [UIColor colorWithRed:0.765 green:0.278 blue:0.349 alpha:1.00]
+
 #endif /* Tiles_h */

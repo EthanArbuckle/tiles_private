@@ -18,7 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [_window setRootViewController:[EAEntryController new]];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[EAEntryController new]];
+    [[navController navigationBar] setHidden:YES];
+    [_window setRootViewController:navController];
     [_window makeKeyAndVisible];
     
     return YES;

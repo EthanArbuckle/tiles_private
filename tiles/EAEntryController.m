@@ -40,6 +40,7 @@
         
         EAMenuButton *statsButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Stats.png"] andTitle:@"Stats"];
         [statsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [playButton frame].origin.y + [playButton frame].size.height + 20, 160, 55)];
+        [statsButton addTarget:self action:@selector(pushToStats) forControlEvents:UIControlEventTouchUpInside];
         [[self view] addSubview:statsButton];
         
         EAMenuButton *optionsButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Options (Cell).png"] andTitle:@"  Options"];
@@ -67,6 +68,12 @@
     [[currentGameNavController interactivePopGestureRecognizer] setEnabled:NO];
     
     [self presentViewController:currentGameNavController animated:YES completion:nil];
+    
+}
+
+- (void)pushToStats {
+    
+    [[self navigationController] pushViewController:[EAStatsController new] animated:YES];
     
 }
 

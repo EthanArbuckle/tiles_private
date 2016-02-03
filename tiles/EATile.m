@@ -77,7 +77,7 @@
 - (void)setIsInHiddenState:(BOOL)hiddenState {
     
     _triggered = !hiddenState;
-    //[_numberLabel setHidden:hiddenState];
+    [_numberLabel setHidden:hiddenState];
     [self setBackgroundColor:(hiddenState) ? tileNormalBackgroundColor : tileSelectedBackgroundColor];
 }
 
