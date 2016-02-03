@@ -44,6 +44,7 @@
         [[self layer] setShadowRadius:7];
         [[self layer] setShadowOffset:CGSizeMake(0, 4)];
         [[self layer] setShadowOpacity:0.9];
+        [[self layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[self bounds]] CGPath]];
         [[self layer] setShadowColor:[UIColor colorWithRed:0.75 green:0.82 blue:0.85 alpha:1.0].CGColor];
         
         [_delegate didTapGameTile:self];

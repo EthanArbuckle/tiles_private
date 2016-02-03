@@ -39,15 +39,15 @@
         
         UILabel *scoreText = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, [_scoreContainer frame].size.width, 10)];
         [scoreText setTextColor:[UIColor whiteColor]];
-        [scoreText setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:14]];
+        [scoreText setFont:[UIFont fontWithName:@".SFUIText-Bold" size:12]];
         [scoreText setTextAlignment:NSTextAlignmentCenter];
-        [scoreText setText:@"Score"];
+        [scoreText setText:@"SCORE"];
         [_scoreContainer addSubview:scoreText];
         
         _gameScoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, [_scoreContainer frame].size.width, 20)];
         [_gameScoreLabel setTextAlignment:NSTextAlignmentCenter];
         [_gameScoreLabel setTextColor:[UIColor whiteColor]];
-        [_gameScoreLabel setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:24]];
+        [_gameScoreLabel setFont:[UIFont fontWithName:@".SFUIText-Bold" size:25]];
         [_gameScoreLabel setText:@"0"];
         [_scoreContainer addSubview:_gameScoreLabel];
         
