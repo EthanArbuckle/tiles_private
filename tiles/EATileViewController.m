@@ -14,7 +14,7 @@
 
     if ((self = [super init])) {
         
-        [[self view] setBackgroundColor:[UIColor colorWithRed:0.910 green:0.929 blue:0.937 alpha:1.00]];
+        [[self view] setBackgroundColor:[UIColor colorWithRed:0.93 green:0.95 blue:0.95 alpha:1.0]];
         
         _currentlyActive = NO;
         
