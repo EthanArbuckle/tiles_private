@@ -10,6 +10,7 @@
 #import "EATile.h"
 #import "EAGameOverview.h"
 #import "Tiles.h"
+#import "EATileGameStatManager.h"
 
 @interface EATileViewController : UIViewController <EATileDelegate>
 

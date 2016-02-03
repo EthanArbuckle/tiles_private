@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Tiles.h"
+#import "EATileGameStatManager.h"
 
 @interface EAStatsController : UIViewController
 

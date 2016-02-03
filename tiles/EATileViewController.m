@@ -26,6 +26,8 @@
         _gameScoreView = [[EAGameOverview alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 100)];
         [_gameScoreView setGameScore:startingScore];
         [[self view] addSubview:_gameScoreView];
+        
+        [[EATileGameStatManager sharedInstance] gameStarting];
 }
     
     return self;
@@ -131,6 +133,8 @@
 }
 
 - (void)endGame {
+    
+    [[EATileGameStatManager sharedInstance] gameStopping];
      [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
