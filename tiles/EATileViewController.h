@@ -25,5 +25,6 @@
 
 - (id)initWithScore:(NSInteger)startingScore;
 - (void)layoutTilesOnContainer;
+- (void)endGame;
 
 @end

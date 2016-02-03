@@ -24,4 +24,7 @@
 - (void)animateScoreIn;
 - (void)stepDownTimer;
 
+//declare here so we dont get a warning about accessing on superview
+- (void)endGame;
+
 @end

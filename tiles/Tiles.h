@@ -22,4 +22,6 @@
 #define tileSelectedBackgroundColor [UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00]
 #define tileBorderColor [UIColor colorWithRed:0.89 green:0.90 blue:0.92 alpha:1.0]
 
+#define tileQuitSettingsButtonColor [UIColor colorWithRed:0.529 green:0.596 blue:0.620 alpha:1.00]
+
 #endif /* Tiles_h */

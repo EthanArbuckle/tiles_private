@@ -24,9 +24,9 @@
         [_scoreContainer setCenter:[self center]];
         [_scoreContainer setFrame:CGRectMake([_scoreContainer frame].origin.x, 35, 75, 50)];
         [_scoreContainer setAlpha:0];
-        [[_scoreContainer layer] setShadowRadius:7];
-        [[_scoreContainer layer] setShadowOffset:CGSizeMake(0, 4)];
-        [[_scoreContainer layer] setShadowOpacity:0.9];
+        [[_scoreContainer layer] setShadowRadius:6];
+        [[_scoreContainer layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[_scoreContainer layer] setShadowOpacity:0.5];
         [[_scoreContainer layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[_scoreContainer bounds]] CGPath]];
         [[_scoreContainer layer] setShadowColor:[scoreContainerBackgroundColor CGColor]];
         [self addSubview:_scoreContainer];
@@ -35,9 +35,9 @@
         [_timerContainer setBackgroundColor:scoreContainerBackgroundColor];
         [_timerContainer setCenter:[self center]];
         [_timerContainer setFrame:CGRectMake([_timerContainer frame].origin.x, 35, 75, 50)];
-        [[_timerContainer layer] setShadowRadius:7];
-        [[_timerContainer layer] setShadowOffset:CGSizeMake(0, 4)];
-        [[_timerContainer layer] setShadowOpacity:0.9];
+        [[_timerContainer layer] setShadowRadius:6];
+        [[_timerContainer layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[_timerContainer layer] setShadowOpacity:0.5];
         [[_timerContainer layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[_timerContainer bounds]] CGPath]];
         [[_timerContainer layer] setShadowColor:[scoreContainerBackgroundColor CGColor]];
         [self addSubview:_timerContainer];
@@ -62,6 +62,29 @@
         [_gameScoreLabel setFont:[UIFont fontWithName:@".SFUIText-Bold" size:25]];
         [_gameScoreLabel setText:@"0"];
         [_scoreContainer addSubview:_gameScoreLabel];
+        
+        UIButton *exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [exitButton setFrame:CGRectMake(25, 35, 50, 50)];
+        [exitButton setBackgroundColor:tileQuitSettingsButtonColor];
+        [exitButton setImage:[UIImage imageNamed:@"Quit.png"] forState:UIControlStateNormal];
+        [[exitButton layer] setShadowRadius:6];
+        [[exitButton layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[exitButton layer] setShadowOpacity:0.5];
+        [[exitButton layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[exitButton bounds]] CGPath]];
+        [[exitButton layer] setShadowColor:[tileQuitSettingsButtonColor CGColor]];
+        [exitButton addTarget:[self superview] action:@selector(endGame) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:exitButton];
+        
+        UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [settingsButton setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - 50 - 25, 35, 50, 50)];
+        [settingsButton setBackgroundColor:tileQuitSettingsButtonColor];
+        [settingsButton setImage:[UIImage imageNamed:@"Options.png"] forState:UIControlStateNormal];
+        [[settingsButton layer] setShadowRadius:6];
+        [[settingsButton layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[settingsButton layer] setShadowOpacity:0.5];
+        [[settingsButton layer] setShadowPath:[[UIBezierPath bezierPathWithRect:[settingsButton bounds]] CGPath]];
+        [[settingsButton layer] setShadowColor:[tileQuitSettingsButtonColor CGColor]];
+        [self addSubview:settingsButton];
         
         [self stepDownTimer];
     }

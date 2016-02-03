@@ -91,7 +91,7 @@
             [[_tileContainer subviews] makeObjectsPerformSelector:@selector(triggerLost)];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+                [self endGame];
             });
 
             return;
@@ -130,6 +130,10 @@
         
     }
     
+}
+
+- (void)endGame {
+     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
