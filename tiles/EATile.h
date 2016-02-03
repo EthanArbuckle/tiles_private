@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL isGameTile;
 @property (nonatomic) NSInteger tileNumber;
 @property (nonatomic, retain) UILabel *numberLabel;
-
+@property (nonatomic) BOOL triggered;
 @property (nonatomic, weak) id <EATileDelegate> delegate;
 
 - (void)setActiveCardWithNumber:(NSInteger)cardNumber;

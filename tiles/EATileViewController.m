@@ -18,7 +18,7 @@
         
         _currentlyActive = NO;
         
-        _tileContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 100, [[self view] frame].size.width, [[self view] frame].size.height - 200)];
+        _tileContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 100, [[self view] frame].size.width, [[self view] frame].size.height - 100)];
         [_tileContainer setBackgroundColor:[UIColor whiteColor]];
         [[self view] addSubview:_tileContainer];
         
@@ -49,7 +49,7 @@
         
         for (int xIndex = 0; xIndex < _numberOfX; xIndex++) {
             
-            EATile *currentTile = [[EATile alloc] initWithFrame:CGRectMake(xOrigin, yOrigin, ([[self view] frame].size.width / _numberOfX) - borderWidth, (([[self view] frame].size.height - 200) / _numberOfY) - borderWidth)];
+            EATile *currentTile = [[EATile alloc] initWithFrame:CGRectMake(xOrigin, yOrigin, ([[self view] frame].size.width / _numberOfX) - borderWidth, (([[self view] frame].size.height - 100) / _numberOfY) - borderWidth)];
             [currentTile setDelegate:self];
             [_tileContainer addSubview:currentTile];
             
@@ -58,7 +58,7 @@
             xOrigin += ([[self view] frame].size.width / _numberOfX);
         }
 
-        yOrigin += ([[self view] frame].size.height - 200) / _numberOfY;
+        yOrigin += ([[self view] frame].size.height - 100) / _numberOfY;
     }
     
     for (int gameCardsChosen = 1; gameCardsChosen <= _numberOfGameTiles; gameCardsChosen++) {
@@ -109,7 +109,7 @@
                 [gameController setNumberOfX:_numberOfX];
                 [gameController setNumberOfY:_numberOfY];
                 
-                if ((([_gameScoreView gameScore] + 1 ) % 4) == 0 && (_numberOfGameTiles + 1) <= (_numberOfY * _numberOfX)) {
+                if ((([_gameScoreView gameScore] + 1 ) % 5) == 0 && (_numberOfGameTiles + 1) <= (_numberOfY * _numberOfX)) {
                     
                     [gameController setNumberOfGameTiles:_numberOfGameTiles + 1];
                 }

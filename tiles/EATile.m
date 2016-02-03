@@ -12,15 +12,19 @@
 
 - (id)initWithFrame:(CGRect)frame {
     
-    if ((self = [super initWithFrame:frame])) {
+    if ((self = [super initWithFrame:CGRectInset(frame, -1, -1)])) {
+        
+        _triggered = YES;
         
         [self setBackgroundColor:[UIColor colorWithRed:0.961 green:0.969 blue:0.996 alpha:1.00]];
         
         [[self layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        [[self layer] setBorderWidth:0.5];
+        [[self layer] setBorderWidth:1];
         
-        _numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, ([self frame].size.height / 2) - 10, [self frame].size.width, 20)];
-        [_numberLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:26]];
+        [self setClipsToBounds:NO];
+        
+        _numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, ([self frame].size.height / 2) - 10, [self frame].size.width, 30)];
+        [_numberLabel setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:30]];
         [_numberLabel setTextAlignment:NSTextAlignmentCenter];
         [_numberLabel setTextColor:[UIColor whiteColor]];
         [self addSubview:_numberLabel];
@@ -32,13 +36,24 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [_delegate didTapGameTile:self];
+    if (!_triggered) {
+        
+        _triggered = YES;
+        
+        [[self layer] setZPosition:5];
+        [[self layer] setShadowRadius:10];
+        [[self layer] setShadowOffset:CGSizeMake(0, 4)];
+        [[self layer] setShadowOpacity:1];
+        [[self layer] setShadowColor:[UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00].CGColor];
+        
+        [_delegate didTapGameTile:self];
+    }
     
 }
 
 - (void)setActiveCardWithNumber:(NSInteger)cardNumber {
 
-    [self setBackgroundColor:[UIColor colorWithRed:0.698 green:0.784 blue:0.816 alpha:1.00]];
+    [self setBackgroundColor:[UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00]];
     [_numberLabel setText:[NSString stringWithFormat:@"%ld", (long)cardNumber]];
     
     [self setIsGameTile:YES];
@@ -59,8 +74,9 @@
 
 - (void)setIsInHiddenState:(BOOL)hiddenState {
     
-  //  [_numberLabel setHidden:hiddenState];
-    [self setBackgroundColor:(hiddenState) ? [UIColor colorWithRed:0.961 green:0.969 blue:0.996 alpha:1.00] : [UIColor colorWithRed:0.698 green:0.784 blue:0.816 alpha:1.00]];
+    _triggered = !hiddenState;
+    //[_numberLabel setHidden:hiddenState];
+    [self setBackgroundColor:(hiddenState) ? [UIColor colorWithRed:0.961 green:0.969 blue:0.996 alpha:1.00] : [UIColor colorWithRed:0.694 green:0.784 blue:0.816 alpha:1.00]];
 }
 
 @end
