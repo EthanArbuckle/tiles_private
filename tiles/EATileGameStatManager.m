@@ -58,6 +58,13 @@
         
         [_gameTimer invalidate];
         _isInGame = NO;
+        
+        NSLog(@"game length: %ld", (long)_gameLength);
+        
+        if (_gameLength < _fastestGame || ((_gameLength > 0) && _fastestGame == 0)) {
+            _fastestGame = _gameLength;
+            [self saveNumber:_gameLength forKey:@"tilesFastestGame"];
+        }
         _gameLength = 0;
     }
     
@@ -78,6 +85,22 @@
     }
     
     return [[NSUserDefaults standardUserDefaults] integerForKey:key];
+}
+
+- (void)saveNumber:(NSInteger)save forKey:(NSString *)key {
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:save forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)stepUpGameAttempts {
+    
+    [self saveNumber:++_totalGameAttempts forKey:@"tilesTotalGameAttempts"];
+}
+
+- (void)stepUpGameWins {
+    
+    [self saveNumber:++_totalGamesWon forKey:@"tilesTotalGameWins"];
 }
 
 @end

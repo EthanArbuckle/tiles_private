@@ -17,12 +17,15 @@
 @property (nonatomic) NSInteger totalTimeInGame;
 @property (nonatomic) NSInteger totalGameAttempts;
 @property (nonatomic) NSInteger totalGamesWon;
-@property (nonatomic) CGFloat fastestGame;
+@property (nonatomic) NSInteger fastestGame;
 
 + (id)sharedInstance;
 - (void)gameStarting;
 - (void)gameStopping;
 - (void)stepUpTimer;
 - (CGFloat)getValueForKey:(NSString *)key;
+- (void)saveNumber:(NSInteger)save forKey:(NSString *)key;
+- (void)stepUpGameAttempts;
+- (void)stepUpGameWins;
 
 @end

@@ -28,6 +28,7 @@
         [[self view] addSubview:_gameScoreView];
         
         [[EATileGameStatManager sharedInstance] gameStarting];
+        [[EATileGameStatManager sharedInstance] stepUpGameAttempts];
 }
     
     return self;

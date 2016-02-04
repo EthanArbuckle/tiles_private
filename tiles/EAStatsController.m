@@ -30,11 +30,10 @@
         [dynamicAttempted setText:[NSString stringWithFormat:@"%ld puzzles.", [[EATileGameStatManager sharedInstance] totalGameAttempts]]];
         [[self view] addSubview:dynamicAttempted];
         
-        /*
-        CGFloat staticLength = [self widthOfString:[dynamicAttempted text] withFont:[dynamicAttempted font]];
-        UIView *test = [[UIView alloc] initWithFrame:CGRectMake(staticLength + 50 + 5, 135, 10, 10)];
-        [[self view] addSubview:test];
-        [test setBackgroundColor:tilesStatsRedLabelColor]; */
+        CGFloat dynamicLength = [self widthOfString:[dynamicAttempted text] withFont:[dynamicAttempted font]];
+        UIImageView *puzzlesImage = [[UIImageView alloc] initWithFrame:CGRectMake(labelXOrigin + dynamicLength + 5, [dynamicAttempted frame].origin.y + 5, 20, 20)];
+        [puzzlesImage setImage:[UIImage imageNamed:@"Puzzles.png"]];
+        [[self view] addSubview:puzzlesImage];
         
         UILabel *staticSolved = [[UILabel alloc] initWithFrame:CGRectMake(labelXOrigin, [staticAttempted frame].origin.y + 70, [[UIScreen mainScreen] bounds].size.width, 25)];
         [staticSolved setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:16]];
@@ -48,6 +47,11 @@
         [dynamicSolved setText:[NSString stringWithFormat:@"%ld puzzles.", [[EATileGameStatManager sharedInstance] totalGamesWon]]];
         [[self view] addSubview:dynamicSolved];
         
+        dynamicLength = [self widthOfString:[dynamicSolved text] withFont:[dynamicSolved font]];
+        UIImageView *allPuzzlesImage = [[UIImageView alloc] initWithFrame:CGRectMake(labelXOrigin + dynamicLength + 5, [dynamicSolved frame].origin.y + 2, 30, 25)];
+        [allPuzzlesImage setImage:[UIImage imageNamed:@"Tick (Solved Puzzles.png"]];
+        [[self view] addSubview:allPuzzlesImage];
+        
         UILabel *staticHighScore = [[UILabel alloc] initWithFrame:CGRectMake(labelXOrigin, [staticSolved frame].origin.y + 70, [[UIScreen mainScreen] bounds].size.width, 25)];
         [staticHighScore setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:16]];
         [staticHighScore setTextColor:tilesHeaderLabelTextColor];
@@ -60,6 +64,11 @@
         [dynamicHighScore setText:[NSString stringWithFormat:@"%ld.", [[EATileGameStatManager sharedInstance] currentHighScore]]];
         [[self view] addSubview:dynamicHighScore];
         
+        dynamicLength = [self widthOfString:[dynamicHighScore text] withFont:[dynamicHighScore font]];
+        UIImageView *highScoreImage = [[UIImageView alloc] initWithFrame:CGRectMake(labelXOrigin + dynamicLength + 5, [dynamicHighScore frame].origin.y + 5, 20, 20)];
+        [highScoreImage setImage:[UIImage imageNamed:@"High Score.png"]];
+        [[self view] addSubview:highScoreImage];
+        
         UILabel *staticFastestTime = [[UILabel alloc] initWithFrame:CGRectMake(labelXOrigin, [staticHighScore frame].origin.y + 70, [[UIScreen mainScreen] bounds].size.width, 25)];
         [staticFastestTime setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:16]];
         [staticFastestTime setTextColor:tilesHeaderLabelTextColor];
@@ -69,8 +78,13 @@
         UILabel *dynamicFastestTime = [[UILabel alloc] initWithFrame:CGRectMake(labelXOrigin, [staticFastestTime frame].origin.y + 25, [[UIScreen mainScreen] bounds].size.width, 30)];
         [dynamicFastestTime setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:26]];
         [dynamicFastestTime setTextColor:tilesStatsRedLabelColor];
-        [dynamicFastestTime setText:[NSString stringWithFormat:@"%.1f seconds.", [[EATileGameStatManager sharedInstance] fastestGame]]];
+        [dynamicFastestTime setText:[NSString stringWithFormat:@"%ld seconds.", [[EATileGameStatManager sharedInstance] fastestGame]]];
         [[self view] addSubview:dynamicFastestTime];
+        
+        dynamicLength = [self widthOfString:[dynamicFastestTime text] withFont:[dynamicFastestTime font]];
+        UIImageView *fastestImage = [[UIImageView alloc] initWithFrame:CGRectMake(labelXOrigin + dynamicLength + 5, [dynamicFastestTime frame].origin.y + 5, 20, 20)];
+        [fastestImage setImage:[UIImage imageNamed:@"Fastest Time.png"]];
+        [[self view] addSubview:fastestImage];
         
         UILabel *staticTotalTime = [[UILabel alloc] initWithFrame:CGRectMake(labelXOrigin, [staticFastestTime frame].origin.y + 70, [[UIScreen mainScreen] bounds].size.width, 25)];
         [staticTotalTime setFont:[UIFont fontWithName:@".SFUIText-Heavy" size:16]];
@@ -83,6 +97,11 @@
         [dynamicTotalTime setTextColor:tilesStatsRedLabelColor];
         [dynamicTotalTime setText:[NSString stringWithFormat:@"%ld seconds.", [[EATileGameStatManager sharedInstance] totalTimeInGame]]];
         [[self view] addSubview:dynamicTotalTime];
+        
+        dynamicLength = [self widthOfString:[dynamicTotalTime text] withFont:[dynamicTotalTime font]];
+        UIImageView *totalTimeImage = [[UIImageView alloc] initWithFrame:CGRectMake(labelXOrigin + dynamicLength + 5, [dynamicTotalTime frame].origin.y + 5, 20, 20)];
+        [totalTimeImage setImage:[UIImage imageNamed:@"Time.png"]];
+        [[self view] addSubview:totalTimeImage];
         
     }
     
