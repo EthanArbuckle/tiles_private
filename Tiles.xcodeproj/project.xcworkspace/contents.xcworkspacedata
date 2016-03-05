@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:tiles.xcodeproj">
+      location = "self:/Users/Andrew/Documents/Git/tiles_private/Tiles.xcodeproj">
    </FileRef>
 </Workspace>
