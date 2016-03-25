@@ -7,26 +7,22 @@
 //
 
 #import "EAMenuButton.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation EAMenuButton
 
-- (id)initWithImage:(UIImage *)image andTitle:(NSString *)title {
+-(void)setupView{
     
-    if ((self = [super init])) {
-        
-        [self setTitle:title forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [[self titleLabel] setFont:[UIFont fontWithName:@".SFUIText-Bold" size:25]];
-        
-        [self setBackgroundColor:tilesEntryButtonsBackgroundColor];
-        [[self layer] setShadowRadius:4];
-        [[self layer] setShadowOffset:CGSizeMake(0, 3)];
-        [[self layer] setShadowOpacity:0.5];
-        [[self layer] setShadowColor:[tilesEntryButtonsBackgroundColor CGColor]];
-        
-        _cellImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, (55 / 2) - 10, 20, 20)];
-        [_cellImage setImage:image];
-        [self addSubview:_cellImage];
+    self.layer.shadowColor = [tilesEntryButtonsBackgroundColor CGColor];
+    self.layer.shadowOpacity = 0.5;
+    self.layer.shadowRadius = 4;
+    self.layer.shadowOffset = CGSizeMake(0,3);
+    
+}
+
+-(id)initWithFrame:(CGRect)frame{
+    if((self = [super initWithFrame:frame])){
+        [self setupView];
     }
     
     return self;

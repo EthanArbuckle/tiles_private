@@ -33,21 +33,24 @@
         [headerLabel setTextColor:tilesHeaderLabelTextColor];
         [[self view] addSubview:headerLabel];
         
-        EAMenuButton *playButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Play.png"] andTitle:@"Play"];
+        EAMenuButton *playButton = [EAMenuButton buttonWithType:UIButtonTypeCustom];
+        [playButton setImage:[UIImage imageNamed:@"Play Button.png"] forState:UIControlStateNormal];
+        [playButton setImage:[UIImage imageNamed:@"Play Button Selected.png"] forState:UIControlStateHighlighted];
         [playButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), 205, 160, 55)];
         [playButton addTarget:self action:@selector(startGame:) forControlEvents:UIControlEventTouchUpInside];
         [[self view] addSubview:playButton];
         
-        EAMenuButton *statsButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Stats.png"] andTitle:@"Stats"];
+        EAMenuButton *statsButton = [EAMenuButton buttonWithType:UIButtonTypeCustom];
+        [statsButton setImage:[UIImage imageNamed:@"Stats Button.png"] forState:UIControlStateNormal];
+        [statsButton setImage:[UIImage imageNamed:@"Stats Button Selected.png"] forState:UIControlStateHighlighted];
         [statsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [playButton frame].origin.y + [playButton frame].size.height + 20, 160, 55)];
         [statsButton addTarget:self action:@selector(pushToStats) forControlEvents:UIControlEventTouchUpInside];
         [[self view] addSubview:statsButton];
         
-        EAMenuButton *optionsButton = [[EAMenuButton alloc] initWithImage:[UIImage imageNamed:@"Options (Cell).png"] andTitle:@"  Options"];
+        EAMenuButton *optionsButton = [EAMenuButton buttonWithType:UIButtonTypeCustom];
+        [optionsButton setImage:[UIImage imageNamed:@"Options Button.png"] forState:UIControlStateNormal];
+        [optionsButton setImage:[UIImage imageNamed:@"Options Button Selected.png"] forState:UIControlStateHighlighted];
         [optionsButton setFrame:CGRectMake(([[UIScreen mainScreen] bounds].size.width / 2) - (160 / 2), [statsButton frame].origin.y + [statsButton frame].size.height + 20, 160, 55)];
-        CGRect imageFrame = [[optionsButton cellImage] frame];
-        imageFrame.origin.x -= 10;
-        [[optionsButton cellImage] setFrame:imageFrame];
         [[self view] addSubview:optionsButton];
         
     }

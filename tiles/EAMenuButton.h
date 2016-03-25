@@ -11,8 +11,4 @@
 
 @interface EAMenuButton : UIButton
 
-@property (nonatomic, retain) UIImageView *cellImage;
-
-- (id)initWithImage:(UIImage *)image andTitle:(NSString *)title;
-
 @end
