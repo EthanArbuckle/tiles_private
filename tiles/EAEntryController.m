@@ -30,7 +30,7 @@
         [headerLabel setFont:[UIFont fontWithName:@".SFUIText-Regular" size:16]];
         [headerLabel setText:@"a memory game"];
         [headerLabel setTextAlignment:NSTextAlignmentCenter];
-        [headerLabel setTextColor:tilesHeaderLabelTextColor];
+        [headerLabel setTextColor:tilesSubHeaderLabelTextColor];
         [[self view] addSubview:headerLabel];
         
         EAMenuButton *playButton = [EAMenuButton buttonWithType:UIButtonTypeCustom];
