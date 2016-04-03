@@ -33,7 +33,6 @@
         
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [backButton setImage:[UIImage imageNamed:@"Back.png"] forState:UIControlStateNormal];
-        [backButton setImage:[UIImage imageNamed:@"Back Selected.png"] forState:UIControlStateHighlighted];
         [backButton setFrame:CGRectMake(15, 35, 25, 20)];
         [backButton addTarget:self action:@selector(backToEntry) forControlEvents:UIControlEventTouchUpInside];
         [[self view] addSubview:backButton];
